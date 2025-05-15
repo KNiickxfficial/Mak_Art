@@ -1,142 +1,195 @@
-body {
-    font-family: sans-serif;
+/* Общие стили для сброса и базовых настроек */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8; /* Светлый фон */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif; /* Замени на нужный шрифт */
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden; /* Скрываем горизонтальный скролл из-за вертикального текста */
 }
 
 .container {
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1200px; /* Максимальная ширина контента */
     margin: 0 auto;
     padding: 0 20px;
 }
 
-header {
-    background-color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Стили для вертикального текста по бокам */
+.vertical-text {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 12px;
+    color: #555; /* Примерный цвет */
+    z-index: 10; /* Чтобы был поверх другого контента */
+    white-space: nowrap; /* Текст в одну строку */
+    text-transform: uppercase;
+    opacity: 0.7; /* Примерная прозрачность */
 }
 
-header .container {
+.vertical-text.left {
+    left: -50px; /* Подбери значение, чтобы текст был виден */
+    transform-origin: 0 0; /* Вращаем вокруг левого верхнего угла */
+    transform: translateY(-50%) rotate(-90deg); /* Вращаем в другую сторону */
+}
+
+.vertical-text.right {
+    right: -50px; /* Подбери значение */
+    transform-origin: 100% 0; /* Вращаем вокруг правого верхнего угла */
+    transform: translateY(-50%) rotate(90deg); /* Вращаем в нужную сторону */
+}
+
+
+/* Стили для шапки */
+.header {
+    height: 100vh; /* Высота на весь экран */
+    background: url('header-background.jpg') no-repeat center center / cover; /* Замени на путь к твоей фоновой картине */
+    color: #fff; /* Цвет текста в шапке */
+    display: flex;
+    flex-direction: column; /* Элементы по вертикали */
+    justify-content: space-between; /* Распределение пространства */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px; /* Отступы по бокам */
 }
 
-.logo a {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.burger-menu {
+    width: 30px;
+    height: 20px;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
-nav ul li {
-    margin-left: 20px;
+.burger-menu span {
+    display: block;
+    height: 3px;
+    background-color: #fff; /* Цвет полосок меню */
+    width: 100%;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #555;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #007bff; /* Акцентный цвет */
-}
-
-main {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.hero {
-    background-color: #e9ecef; /* Светлый фоновый цвет секции */
-    padding: 80px 0;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.button {
+.header-icons .icon {
+    /* Стиль для иконок, замени на реальные SVG или шрифтовые иконки */
     display: inline-block;
-    background-color: #007bff; /* Акцентный цвет кнопки */
+    width: 20px;
+    height: 20px;
+    background-color: #fff; /* Пример цвета иконки */
+    margin-left: 10px;
+}
+
+.header-content {
+    flex-grow: 1; /* Занимает оставшееся пространство */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Выравнивание по центру по вертикали */
+    align-items: center; /* Выравнивание по центру по горизонтали */
+}
+
+.artist-name {
+    font-size: 4em; /* Примерный размер шрифта */
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.artist-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.scroll-indicator svg {
+    width: 40px;
+    height: 40px;
     color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    stroke-width: 1; /* Толщина линии стрелки */
 }
 
-.button:hover {
-    background-color: #0056b3;
-}
 
-.gallery-preview {
+/* Стили для секции вступления */
+.intro-section {
+    background-color: #f8f8f8; /* Примерный светлый фон */
     padding: 60px 0;
+}
+
+.intro-text-block {
+    width: 60%; /* Примерная ширина текстового блока */
+    margin: 0 auto; /* Выравнивание по центру */
+    text-align: center; /* Выравнивание текста внутри блока */
+    font-size: 1.1em;
+    color: #555;
+}
+
+
+/* Стили для секции галереи */
+.gallery-section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.section-title {
     text-align: center;
+    margin-bottom: 40px;
 }
 
-.gallery-preview h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
-    color: #333;
+.section-title .divider {
+    width: 50px; /* Ширина разделителя */
+    height: 2px;
+    background-color: #333; /* Цвет разделителя */
+    margin: 0 auto 10px; /* Центрирование разделителя */
 }
 
-.gallery-grid {
+.section-title h2 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+.gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Адаптивная сетка */
+    gap: 20px; /* Расстояние между элементами галереи */
+}
+
+.gallery-item {
+    overflow: hidden; /* Обрезаем части изображения, выходящие за рамки */
+    background-color: #eee; /* Фон для загрузки или пустых мест */
+}
+
+.gallery-item.large {
+    grid-column: span 2; /* Элементы с классом large занимают 2 колонки */
+    grid-row: span 2; /* И 2 строки, создавая "плиточный" эффект как на фото */
 }
 
 .gallery-item img {
+    display: block;
     width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    object-fit: cover; /* Изображения будут покрывать контейнер, не искажаясь */
 }
 
-.about-preview {
-    background-color: #f0f0f0; /* Еще один светлый фон */
-    padding: 60px 0;
-    text-align: center;
-}
+/* Базовая адаптивность (можно доработать) */
+@media (max-width: 768px) {
+    .vertical-text {
+        display: none; /* Скрываем вертикальный текст на маленьких экранах */
+    }
 
-.about-preview h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: #333;
-}
+    .intro-text-block {
+        width: 90%; /* Увеличиваем ширину блока текста на маленьких экранах */
+    }
 
-.about-preview p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
+     .gallery .gallery-item.large {
+        grid-column: span 1; /* На маленьких экранах все элементы занимают 1 колонку */
+        grid-row: span 1;
+    }
 }

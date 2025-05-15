@@ -3,67 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пример сайта BabyninaArt</title>
+    <title>Сайт художника (Базовый макет)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+
+    <div class="vertical-text left">ПЕРСОНАЛЬНАЯ ГАЛЕРЕЯ ХУДОЖНИКА</div>
+    <div class="vertical-text right">ВЫСТАВКИ | БИОГРАФИЯ | АРТ</div>
+
+    <header class="header">
         <div class="container">
-            <div class="logo">
-                <a href="#">BabyninaArt</a>
+            <div class="header-top">
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header-icons">
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Галерея</a></li>
-                    <li><a href="#">Мастер-классы</a></li>
-                    <li><a href="#">Обо мне</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <h1 class="artist-name">
+                    ВОРОНИНА<br>
+                    АЛЛА АДОЛЬФОВНА
+                </h1>
+                <p class="artist-subtitle">
+                    ПЕРСОНАЛЬНАЯ<br>
+                    ВЫСТАВКА
+                </p>
+                <div class="scroll-indicator">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="intro-section">
             <div class="container">
-                <h1>Добро пожаловать в мир творчества BabyninaArt</h1>
-                <p>Вдохновляющие работы и увлекательные мастер-классы.</p>
-                <a href="#" class="button">Смотреть галерею</a>
-            </div>
-        </section>
-
-        <section class="gallery-preview">
-            <div class="container">
-                <h2>Последние работы</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="placeholder-image.jpg" alt="Работа 1">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="placeholder-image.jpg" alt="Работа 2">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="placeholder-image.jpg" alt="Работа 3">
-                    </div>
+                <div class="intro-text-block">
+                     <p>
+                        VO2 Group excels in networking and relationships. Driven by a very « business-oriented » model, employees and partners are strongly encouraged to share their ambitions and to take an active part to the group’s growth strategy.
+                     </p>
                 </div>
-                <a href="#" class="button">Все работы</a>
             </div>
         </section>
 
-        <section class="about-preview">
+        <section class="gallery-section">
             <div class="container">
-                <h2>Немного обо мне</h2>
-                <p>Здесь будет краткое описание автора и его творчества.</p>
-                <a href="#" class="button">Подробнее</a>
+                <div class="section-title">
+                    <div class="divider"></div>
+                    <h2>НОВЫЕ РАБОТЫ</h2>
+                </div>
+                <div class="gallery">
+                    <div class="gallery-item large">
+                        <img src="placeholder-large.jpg" alt="Картина 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="placeholder-small-1.jpg" alt="Картина 2">
+                    </div>
+                     <div class="gallery-item">
+                        <img src="placeholder-small-2.jpg" alt="Картина 3">
+                    </div>
+                    <div class="gallery-item large">
+                        <img src="placeholder-large-2.jpg" alt="Картина 4">
+                    </div>
+                     <div class="gallery-item">
+                        <img src="placeholder-small-3.jpg" alt="Картина 5">
+                    </div>
+                      <div class="gallery-item">
+                        <img src="placeholder-small-4.jpg" alt="Картина 6">
+                    </div>
+                     <div class="gallery-item large">
+                        <img src="placeholder-large-3.jpg" alt="Картина 7">
+                    </div>
+                    </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 BabyninaArt. Все права защищены.</p>
-        </div>
-    </footer>
-</body>
+    </body>
 </html>
